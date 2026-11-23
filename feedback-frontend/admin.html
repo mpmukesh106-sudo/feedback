@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card wide">
+    <h1>Feedback dashboard</h1>
+
+    <section id="login">
+      <p class="subtitle">Enter the admin key set on the backend.</p>
+      <div class="login-row">
+        <div>
+          <label for="key">Admin key</label>
+          <input id="key" type="password" autocomplete="off" />
+        </div>
+        <button id="login-btn" type="button">View</button>
+      </div>
+      <div id="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="stats">
+        <div class="stat"><div class="num" id="total">0</div><div class="lbl">Total responses</div></div>
+        <div class="stat"><div class="num" id="average">0</div><div class="lbl">Average rating</div></div>
+      </div>
+      <div class="dist" id="dist"></div>
+      <div id="list"></div>
+      <button id="logout-btn" type="button">Log out</button>
+    </section>
+
+    <p class="footer-link"><a href="index.html">&larr; Back to form</a></p>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

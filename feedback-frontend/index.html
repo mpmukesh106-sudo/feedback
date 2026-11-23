@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Feedback</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>We'd love your feedback</h1>
+    <p class="subtitle">Tell us what's working and what could be better.</p>
+
+    <form id="feedback-form" novalidate>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" maxlength="80" required />
+
+      <label for="email">Email <span class="optional">(optional)</span></label>
+      <input id="email" name="email" type="email" />
+
+      <label for="category">Category</label>
+      <select id="category" name="category">
+        <option>General</option>
+        <option>Bug</option>
+        <option>Feature Request</option>
+        <option>Design</option>
+        <option>Other</option>
+      </select>
+
+      <label id="rating-label">Rating</label>
+      <div class="stars" role="radiogroup" aria-labelledby="rating-label">
+        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars">★</label>
+        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">★</label>
+        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">★</label>
+        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">★</label>
+        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">★</label>
+      </div>
+
+      <label for="message">Your feedback</label>
+      <textarea id="message" name="message" rows="5" maxlength="2000" required></textarea>
+      <div class="counter"><span id="count">0</span>/2000</div>
+
+      <button type="submit" id="submit-btn">Send feedback</button>
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+
+    <p class="footer-link"><a href="admin.html">Admin</a></p>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
