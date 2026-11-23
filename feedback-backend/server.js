@@ -113,9 +113,11 @@ app.delete("/api/feedback/:id", requireAdmin, (req, res) => {
 
 app.use((req, res) => res.status(404).json({ error: "Not found" }));
 
-app.listen(PORT, () => {
-  console.log(`Feedback API running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Feedback API running on port ${PORT}`);
+
   if (ADMIN_KEY === "change-me") {
-    console.warn("WARNING: using default ADMIN_KEY. Set ADMIN_KEY before deploying.");
+    console.warn("WARNING: Set ADMIN_KEY before deploying.");
   }
 });
+  
